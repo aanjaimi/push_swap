@@ -8,9 +8,10 @@ OBJ_PS =	parsing/check_errors.o \
 		parsing/ft_split.o \
 		parsing/fill_stack.o \
 		sorting/three_or_less.o \
+		sorting/five_or_less.o \
 		sorting/instructions.o \
-		optimisation/add_to_optim.c \
-		optimisation/prt_functions.c \
+		optimisation/add_to_optim.o \
+		optimisation/prt_functions.o \
 		push_swap.o
 
 .phony: all clean fclean re

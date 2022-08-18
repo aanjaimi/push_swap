@@ -11,7 +11,8 @@ int	main(int ac, char **av)
 		return (0);
 	info = parse(ac, av);
 	fill_stack(&a, &b, info.sp, info.size);
-	// sorting(&a, &b, &opt, info.size);
+	sorting(&a, &b, &opt, info.size);
+	print_opers(opt);
 	// while (a)
 	// {
 	// 	printf("%d\n", a->value);

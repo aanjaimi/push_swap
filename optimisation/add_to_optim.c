@@ -15,7 +15,7 @@ void	add_to_optim(t_optim **opt, char *opr)
 	t_optim	*new;
 
 	head = *opt;
-	if (ft_strcmp(opr, "") != 0)
+	if (!ft_strcmp(opr, ""))
 		return ;
 	if (!head)
 	{
