@@ -9,12 +9,12 @@ void	push_to_stack(t_stack **head, int val)
 	if (current)
 	{
 		while (current->next)
-            current = current->next;
-        new = (t_stack *)malloc(sizeof(t_stack));
+			current = current->next;
+		new = (t_stack *)malloc(sizeof(t_stack));
 		new->value = val;
 		new->next = NULL;
 		current->next = new;
-        return ;
+		return ;
 	}
 	*head = (t_stack *)malloc(sizeof(t_stack));
 	(*head)->value = val;
@@ -47,9 +47,9 @@ void	fill_stack(t_stack **a, t_stack **b, char **sp, int size)
 		push_to_stack(a, ft_atoi(*sp));
 		sp++;
 	}
-    if (is_sorted(*a) && !b)
-    {
-        free_stack(a);
-        exit(0);
-    }
+	if (is_sorted(*a) && !b)
+	{
+		free_stack(a);
+		exit(0);
+	}
 }

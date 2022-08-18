@@ -7,7 +7,7 @@ char	*ft_substr(char *s, int start, int len)
 
 	if (!s)
 		return (NULL);
-    i = 0;
+	i = 0;
 	if (start < ft_strlen(s))
 	{
 		if (ft_strlen(s) < len)

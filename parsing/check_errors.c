@@ -2,9 +2,9 @@
 
 int	ft_atoi(char *str)
 {
-	int signe;
-	int i;
-	int n;
+	int	signe;
+	int	i;
+	int	n;
 
 	i = 0;
 	n = 0;
@@ -55,9 +55,9 @@ long	check_dup(char **sp, int size)
 
 long	check_non_num(char *str)
 {
-	int             i;
-	long long       n;
-	int             signe;
+	int				i;
+	long long		n;
+	int				signe;
 
 	i = 0;
 	n = 0;
@@ -91,7 +91,7 @@ void	check_error(char **sp, int size)
 	{
 		if (check_non_num(sp[i]) == ERR || check_dup(sp, size) == ERR)
 		{
-            free_sp(sp);
+			free_sp(sp);
 			write(2, "Error\n", 6);
 			exit(0);
 		}

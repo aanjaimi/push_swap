@@ -23,3 +23,12 @@ int get_min_index(t_stack *a)
 	}
 	return (index);
 }
+
+// void	sort_three(t_stack **a)
+// {
+// 	if (get_min_index(*a) == 0
+// 		&& (*a)->next->next->value > (*a)->next->value)
+// 	{
+// 		swap()
+// 	}
+// }
