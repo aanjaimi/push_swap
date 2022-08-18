@@ -48,3 +48,28 @@ void	sort_three(t_stack **a, t_optim **opt)
 		add_to_optim(opt, swap(*a, 'a'));
 	}
 }
+
+void	sort_rev_three(t_stack **b, t_optim **opt)
+{
+	if (get_min_index(*b) == 0
+		&& (*b)->next->next->value < (*b)->next->value)
+		add_to_optim(opt, rotate(b, 'b'));
+	else if (get_min_index(*b) == 0
+		&& (*b)->next->next->value > (*b)->next->value)
+	{
+		add_to_optim(opt, rotate(b, 'b'));
+		add_to_optim(opt, swap(*b, 'b'));
+	}
+	else if (get_min_index(*b) == 1
+		&& (*b)->value > (*b)->next->next->value)
+	{
+		add_to_optim(opt, rev_rotate(b, 'b'));
+		add_to_optim(opt, swap(*b, 'b'));
+	}
+	else if (get_min_index(*b) == 1
+		&& (*b)->value < (*b)->next->next->value)
+		add_to_optim(opt, rev_rotate(b, 'b'));
+	else if (get_min_index(*b) == 2
+		&& (*b)->value < (*b)->next->value)
+		add_to_optim(opt, swap(*b, 'b'));
+}

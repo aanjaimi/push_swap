@@ -8,6 +8,14 @@
 # include<stddef.h>
 # include<stdio.h>
 
+typedef struct s_utils
+{
+	int	pivot;
+	int	i;
+	int	p;
+	int	r;
+}	t_utils;
+
 typedef struct s_info
 {
 	int		size;
@@ -49,13 +57,21 @@ char	*push_b(t_stack **a, t_stack **b);
 char	*rotate(t_stack **head, char c);
 char	*rev_rotate(t_stack **head, char c);
 //sorting
+int		get_pivot(t_stack *a, int size);
 int		is_sorted(t_stack *a);
 int		is_revsorted(t_stack *a);
 int		get_min_index(t_stack *a);
+int		stack_size(t_stack *a);
 void	sort_three(t_stack **a, t_optim **opt);
+void	sort_rev_three(t_stack **b, t_optim **opt);
 void	sort_four(t_stack **a, t_stack **b, t_optim **opt);
 void	sort_five(t_stack **a, t_stack **b, t_optim **opt);
 void	sorting(t_stack **a, t_stack **b, t_optim **opt, int size);
+int		sort_stack_a(t_stack **a, int size, t_optim **opt);
+int		sort_stack_b(t_stack **b, int size, t_optim **opt);
+int		global_sort_a(t_stack **a, t_stack **b, t_optim **opt, int size);
+int		global_sort_b(t_stack **a, t_stack **b, t_optim **opt, int size);
+void	print_stack(t_stack *a, t_stack *b);
 //optimisation
 void	add_to_optim(t_optim **opt, char *opr);
 void	delete_from_optim(t_optim *opt);

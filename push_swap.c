@@ -13,15 +13,5 @@ int	main(int ac, char **av)
 	fill_stack(&a, &b, info.sp, info.size);
 	sorting(&a, &b, &opt, info.size);
 	print_opers(opt);
-	// while (a)
-	// {
-	// 	printf("%d\n", a->value);
-	// 	a = a->next;
-	// }
-	// printf("------------------------------\n");
-	// while (b)
-	// {
-	// 	printf("%d\n", b->value);
-	// 	b = b->next;
-	// }
+	// print_stack(a, b);
 }

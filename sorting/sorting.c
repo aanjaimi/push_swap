@@ -10,6 +10,6 @@ void	sorting(t_stack **a, t_stack **b, t_optim **opt, int size)
 		sort_four(a, b, opt);
 	else if (size == 5)
 		sort_five(a, b, opt);
-	// else
-	// 	global_sort(a, b, opt, size);
+	else
+		global_sort_a(a, b, opt, size);
 }
