@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 char	**join_and_split(int ac, char **av)
 {

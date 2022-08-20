@@ -1,4 +1,10 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
+
+static void	double_remove(t_optim *fi, t_optim *se)
+{
+	delete_from_optim(se);
+	delete_from_optim(fi);
+}
 
 void	delete_oper(t_optim **opt, char *op)
 {
@@ -17,8 +23,7 @@ void	delete_oper(t_optim **opt, char *op)
 			{
 				v.stop = 0;
 				v.pr->next = v.se->next;
-				delete_from_optim(v.se);
-				delete_from_optim(v.fi);
+				double_remove(v.fi, v.se);
 				v.ptr = v.pr->next;
 			}
 			else
@@ -42,13 +47,12 @@ void	delete_opers(t_optim **opt, char *op1, char *op2)
 			v.pr = v.ptr;
 			v.fi = v.pr->next;
 			v.se = v.fi->next;
-			if (!ft_strcmp(v.fi->op, op1) && !ft_strcmp(v.se->op, op2)
-				|| !ft_strcmp(v.fi->op, op2) && !ft_strcmp(v.se->op, op1))
+			if ((!ft_strcmp(v.fi->op, op1) && !ft_strcmp(v.se->op, op2))
+				|| (!ft_strcmp(v.fi->op, op2) && !ft_strcmp(v.se->op, op1)))
 			{
 				v.stop = 0;
 				v.pr->next = v.se->next;
-				delete_from_optim(v.se);
-				delete_from_optim(v.fi);
+				double_remove(v.fi, v.se);
 				v.ptr = v.pr->next;
 			}
 			else
@@ -70,8 +74,8 @@ void	replace_opt(t_optim **opt, char *op1, char *op2, char *op)
 		while (v.ptr && v.ptr->next)
 		{
 			v.pr = v.ptr->next;
-			if (!ft_strcmp(v.ptr->op, op1) && !ft_strcmp(v.pr->op, op2)
-				|| !ft_strcmp(v.ptr->op, op2) && !ft_strcmp(v.pr->op, op1))
+			if ((!ft_strcmp(v.ptr->op, op1) && !ft_strcmp(v.pr->op, op2))
+				|| (!ft_strcmp(v.ptr->op, op2) && !ft_strcmp(v.pr->op, op1)))
 			{
 				v.stop = 0;
 				v.ptr->next = v.pr->next;
@@ -86,14 +90,14 @@ void	replace_opt(t_optim **opt, char *op1, char *op2, char *op)
 	}
 }
 
-void    optimisation(t_optim **opt)
+void	optimisation(t_optim **opt)
 {
-    delete_oper(opt, "sa");
-    delete_oper(opt, "sb");
-    delete_opers(opt, "pa", "pb");
-    delete_opers(opt, "ra", "rra");
-    delete_opers(opt, "rb", "rrb");
-    replace_opt(opt, "sa", "sb", "ss");
-    replace_opt(opt, "ra", "rb", "rr");
-    replace_opt(opt, "rra", "rrb", "rrr");
+	delete_oper(opt, "sa");
+	delete_oper(opt, "sb");
+	delete_opers(opt, "pa", "pb");
+	delete_opers(opt, "ra", "rra");
+	delete_opers(opt, "rb", "rrb");
+	replace_opt(opt, "sa", "sb", "ss");
+	replace_opt(opt, "ra", "rb", "rr");
+	replace_opt(opt, "rra", "rrb", "rrr");
 }

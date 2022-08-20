@@ -1,8 +1,8 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	sort_a_three_upper(t_stack **a, t_optim **opt)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (++i < 3)
@@ -21,7 +21,7 @@ int	sort_a_three_upper(t_stack **a, t_optim **opt)
 
 int	sort_b_three_upper(t_stack **b, t_optim **opt)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (++i < 3)

@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	take_bake_to_a(t_stack **a, t_optim **opt, int len)
 {
@@ -32,16 +32,10 @@ int	global_sort_b(t_stack **a, t_stack **b, t_optim **opt, int size)
 	var.pivot = get_pivot(*b, size);
 	while (var.i++ < size)
 	{
-		if ((*b)->value > var.pivot)
-		{
+		if ((*b)->value > var.pivot && ++var.p)
 			add_to_optim(opt, push_a(a, b));
-			var.p++;
-		}
-		else
-		{
+		else if ((*b)->value <= var.pivot && ++var.r)
 			add_to_optim(opt, rotate(b, 'b'));
-			var.r++;
-		}
 	}
 	global_sort_a(a, b, opt, var.p);
 	take_bake_to_b(b, opt, var.r);
@@ -63,16 +57,10 @@ int	global_sort_a(t_stack **a, t_stack **b, t_optim **opt, int size)
 	var.pivot = get_pivot(*a, size);
 	while (++var.i < size)
 	{
-		if ((*a)->value < var.pivot)
-		{
+		if ((*a)->value < var.pivot && ++var.p)
 			add_to_optim(opt, push_b(a, b));
-			var.p++;
-		}
-		else
-		{
+		else if ((*a)->value >= var.pivot && ++var.r)
 			add_to_optim(opt, rotate(a, 'a'));
-			var.r++;
-		}
 	}
 	take_bake_to_a(a, opt, var.r);
 	global_sort_a(a, b, opt, size - var.p);

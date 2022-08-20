@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	push_to_stack(t_stack **head, int val)
 {
@@ -21,17 +21,7 @@ void	push_to_stack(t_stack **head, int val)
 	(*head)->next = NULL;
 }
 
-void	free_stack(t_stack **head)
-{
-	if (*head)
-	{
-		if ((*head)->next)
-			free_stack(&(*head)->next);
-		free((*head)->next);
-	}
-}
-
-void	fill_stack(t_stack **a, t_stack **b, char **sp, int size)
+void	fill_stack(t_stack **a, char **sp, int size)
 {
 	int	i;
 
@@ -40,10 +30,5 @@ void	fill_stack(t_stack **a, t_stack **b, char **sp, int size)
 	{
 		push_to_stack(a, ft_atoi(*sp));
 		sp++;
-	}
-	if (is_sorted(*a) && !b)
-	{
-		free_stack(a);
-		exit(0);
 	}
 }

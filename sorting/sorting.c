@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sorting(t_stack **a, t_stack **b, t_optim **opt, int size)
 {

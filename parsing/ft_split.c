@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 char	*ft_substr(char *s, int start, int len)
 {

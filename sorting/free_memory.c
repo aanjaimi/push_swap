@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	free_memory(t_optim *opt, t_stack *a, t_stack *b)
 {
