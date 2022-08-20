@@ -17,6 +17,7 @@ OBJ_PS =	parsing/check_errors.o \
 		sorting/print_stack.o \
 		optimisation/add_to_optim.o \
 		optimisation/prt_functions.o \
+		optimisation/optimisation.o \
 		push_swap.o
 
 .phony: all clean fclean re

@@ -12,6 +12,6 @@ int	main(int ac, char **av)
 	info = parse(ac, av);
 	fill_stack(&a, &b, info.sp, info.size);
 	sorting(&a, &b, &opt, info.size);
+	optimisation(&opt);
 	print_opers(opt);
-	// print_stack(a, b);
 }

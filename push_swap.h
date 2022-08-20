@@ -34,6 +34,15 @@ typedef struct s_optim
 	struct s_optim	*next;
 }	t_optim;
 
+typedef struct s_var
+{
+	t_optim	*ptr;
+	t_optim	*pr;
+	t_optim	*fi;
+	t_optim	*se;
+	int		stop;
+}	t_var;
+
 //parsing
 int		ft_atoi(char *str);
 int		ft_strcmp(char *s1, char *s2);
@@ -78,4 +87,8 @@ void	delete_from_optim(t_optim *opt);
 void	delete_optim(t_optim **opt);
 void	print_opers(t_optim *opt);
 void	ft_putendl(char *s);
+void	delete_oper(t_optim **opt, char *op);
+void	delete_opers(t_optim **opt, char *op1, char *op2);
+void	replace_opt(t_optim **opt, char *op1, char *op2, char *op);
+void    optimisation(t_optim **opt);
 #endif
