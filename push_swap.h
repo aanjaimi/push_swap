@@ -58,7 +58,6 @@ void	fill_stack(t_stack **a, t_stack **b, char **sp, int size);
 void	insert_beginning(t_stack **head, int value);
 void	insert_end(t_stack **head, int value);
 void	remove_element(t_stack **head, int value);
-void	free_list(t_stack **head);
 //instructions
 char	*swap(t_stack *a, char c);
 char	*push_a(t_stack **a, t_stack **b);
@@ -84,11 +83,14 @@ void	print_stack(t_stack *a, t_stack *b);
 //optimisation
 void	add_to_optim(t_optim **opt, char *opr);
 void	delete_from_optim(t_optim *opt);
-void	delete_optim(t_optim **opt);
 void	print_opers(t_optim *opt);
 void	ft_putendl(char *s);
 void	delete_oper(t_optim **opt, char *op);
 void	delete_opers(t_optim **opt, char *op1, char *op2);
 void	replace_opt(t_optim **opt, char *op1, char *op2, char *op);
 void    optimisation(t_optim **opt);
+//free
+void	free_list(t_stack **head);
+void	delete_optim(t_optim **opt);
+void	free_memory(t_optim *opt, t_stack *a, t_stack *b);
 #endif

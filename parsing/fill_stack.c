@@ -31,12 +31,6 @@ void	free_stack(t_stack **head)
 	}
 }
 
-void	free_memory(t_stack **a, t_stack **b)
-{
-	free_stack(a);
-	free_stack(b);
-}
-
 void	fill_stack(t_stack **a, t_stack **b, char **sp, int size)
 {
 	int	i;

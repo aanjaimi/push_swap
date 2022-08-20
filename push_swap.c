@@ -11,7 +11,9 @@ int	main(int ac, char **av)
 		return (0);
 	info = parse(ac, av);
 	fill_stack(&a, &b, info.sp, info.size);
+	free_sp(info.sp);
 	sorting(&a, &b, &opt, info.size);
 	optimisation(&opt);
 	print_opers(opt);
+	free_memory(opt, a, b);
 }
