@@ -6,7 +6,7 @@
 /*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 11:25:45 by aanjaimi          #+#    #+#             */
-/*   Updated: 2022/09/27 11:25:46 by aanjaimi         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:42:37 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	delete_opers(t_optim **opt, char *op1, char *op2)
 				v.stop = 0;
 				v.pr->next = v.se->next;
 				double_remove(v.fi, v.se);
-				v.ptr = v.pr->next;
+				v.ptr->next = v.pr->next;
 			}
 			else
 				v.ptr = v.ptr->next;

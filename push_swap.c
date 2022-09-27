@@ -6,7 +6,7 @@
 /*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 11:24:02 by aanjaimi          #+#    #+#             */
-/*   Updated: 2022/09/27 11:24:03 by aanjaimi         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:28:35 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 	info = parse(ac, av);
 	fill_stack(&a, info.sp, info.size);
 	free_sp(info.sp);
+	b = NULL;
 	if (is_sorted(a) && !b)
 	{
 		free_list(&a);
